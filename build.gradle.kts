@@ -11,7 +11,7 @@ group = "me.fortibrine"
 version = "1.0"
 
 kotlin {
-    js(LEGACY) {
+    js(IR) {
         browser {
             commonWebpackConfig {
                 cssSupport {
@@ -34,11 +34,12 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
 
                 // Coroutines
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
-                // Bootstrap
-                implementation(npm("react-bootstrap", "2.10.4"))
-                implementation(npm("bootstrap", "5.0.0"))
+//                 API
+                implementation("io.ktor:ktor-client-core:2.3.12")
+                implementation("io.ktor:ktor-client-js:2.3.12")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
             }
         }
     }
